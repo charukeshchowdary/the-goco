@@ -23,20 +23,24 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "THE GOCO — Where Chocolate Tells a Story",
   description:
-    "THE GOCO is a premium artisan chocolate brand launching October 2030. Discover our story of cocoa, coconut, and craftsmanship.",
-  keywords: ["chocolate", "artisan", "cocoa", "premium", "THE GOCO", "coming soon"],
+    "THE GOCO is a premium artisan chocolate brand launching October 2026. Discover our story of cocoa, coconut, and craftsmanship rooted in Godavari.",
+  keywords: ["chocolate", "artisan", "cocoa", "premium", "THE GOCO", "Godavari", "coconut", "October 2026"],
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-[#120905] text-[#FAF5EE] selection:bg-gold/30 selection:text-cream">
         <AnnouncementBar />
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 bg-[#120905]">{children}</main>
       </body>
     </html>
   );

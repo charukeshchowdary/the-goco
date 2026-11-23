@@ -4,21 +4,26 @@ import React from "react";
 
 export default function AnnouncementBar() {
   return (
-    <div className="animate-slide-down bg-brown-dark text-gold-light py-2.5 overflow-hidden relative">
-      {/* Scrolling marquee text */}
-      <div className="flex whitespace-nowrap" style={{ animation: "marquee 25s linear infinite" }}>
-        {[...Array(4)].map((_, i) => (
-          <span key={i} className="mx-8 text-sm tracking-[0.25em] uppercase font-sans">
-            ✦ THE GOCO IS COMING SOON TO MARKET — OCTOBER 2030 ✦
-            <span className="mx-4 text-gold opacity-60">|</span>
-            WHERE CHOCOLATE TELLS A STORY
-            <span className="mx-4 text-gold opacity-60">|</span>
+    <div className="animate-slide-down bg-[#C59E47] text-[#140A06] py-2 overflow-hidden relative select-none z-50">
+      {/* Scrolling marquee text matching Figma */}
+      <div
+        className="flex whitespace-nowrap text-[11px] sm:text-xs font-sans font-bold tracking-[0.24em] uppercase"
+        style={{ animation: "marquee 30s linear infinite" }}
+      >
+        {[...Array(6)].map((_, i) => (
+          <span key={i} className="inline-flex items-center mx-4 sm:mx-6 gap-3">
+            <span>THE GOCO IS COMING SOON TO MARKET</span>
+            <span className="opacity-60">•</span>
+            <span>OCTOBER 2026</span>
+            <span className="opacity-60">•</span>
+            <span>WHERE CHOCOLATE TELLS A STORY</span>
+            <span className="opacity-60">•</span>
           </span>
         ))}
       </div>
-      {/* Edge fade */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-brown-dark to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-brown-dark to-transparent pointer-events-none" />
+      {/* Subtle edge fades */}
+      <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#C59E47] to-transparent pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-[#C59E47] to-transparent pointer-events-none" />
     </div>
   );
 }

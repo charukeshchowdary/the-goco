@@ -13,64 +13,67 @@ export default function Navbar() {
   const isFounder = pathname === "/founder";
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-brown-dark/95 backdrop-blur-md border-b border-gold/20 transition-all">
+    <header className="sticky top-0 z-40 w-full bg-[#130A06]/95 backdrop-blur-md border-b border-gold/20 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo / Brand */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center bg-brown/50 group-hover:border-gold group-hover:scale-105 transition-all">
+          {/* Logo / Brand — Figma Spec */}
+          <Link href="/" className="flex items-center gap-3.5 group">
+            <div className="w-10 h-10 rounded-full border border-gold/60 flex items-center justify-center bg-[#1E100A] group-hover:border-gold group-hover:scale-105 transition-all shadow-md">
               <span className="text-gold font-serif font-bold text-lg">G</span>
             </div>
             <div>
-              <span className="text-xl sm:text-2xl font-serif font-bold tracking-wider text-cream group-hover:text-gold-light transition-colors">
+              <span className="text-xl sm:text-2xl font-serif font-bold tracking-wider text-[#FAF5EE] group-hover:text-gold-light transition-colors">
                 THE GOCO
               </span>
-              <span className="block text-[10px] uppercase tracking-[0.25em] text-gold/70 font-sans">
+              <span className="block text-[9px] uppercase tracking-[0.25em] text-gold/80 font-sans">
                 Where Chocolate Tells a Story
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-7 font-sans text-xs uppercase tracking-[0.2em]">
+          <nav className="hidden md:flex items-center gap-8 font-sans text-xs uppercase tracking-[0.2em]">
             <Link
               href="/"
               className={`transition-colors hover:text-gold ${
-                isHome ? "text-gold font-semibold" : "text-cream/75"
+                isHome ? "text-gold font-semibold" : "text-[#FAF5EE]/75"
               }`}
             >
               Home
             </Link>
             <Link
               href="/#brand-story"
-              className="text-cream/75 hover:text-gold transition-colors"
+              className="text-[#FAF5EE]/75 hover:text-gold transition-colors"
             >
               Story Chronicles
             </Link>
             <Link
               href="/products"
               className={`transition-colors hover:text-gold ${
-                isProducts ? "text-gold font-semibold" : "text-cream/75"
+                isProducts ? "text-gold font-semibold" : "text-[#FAF5EE]/75"
               }`}
             >
               Products & Process
             </Link>
             <Link
               href="/founder"
-              className={`px-4 py-2 rounded-full border transition-all ${
-                isFounder
-                  ? "bg-gold text-brown-dark font-semibold border-gold shadow-md shadow-gold/20"
-                  : "border-gold/30 text-gold-light hover:border-gold hover:text-gold hover:bg-gold/10"
+              className={`transition-colors hover:text-gold ${
+                isFounder ? "text-gold font-semibold" : "text-[#FAF5EE]/75"
               }`}
             >
               Meet the Founder
             </Link>
           </nav>
 
-          {/* Launch Pill */}
-          <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold/30 bg-brown/60 text-[11px] text-gold-light font-sans">
-            <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-            <span>Launch: Oct 2030</span>
+          {/* Right Action: Launch Pill */}
+          <div className="hidden md:flex items-center">
+            <Link
+              href="/#notify"
+              className="px-4 py-1.5 rounded-full border border-gold/40 bg-[#1D0F0A] text-[11px] uppercase tracking-[0.18em] text-gold-light hover:border-gold hover:bg-gold/10 hover:text-gold transition-all font-sans inline-flex items-center gap-2 shadow-sm"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+              <span>Launch: Oct 2026</span>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -78,7 +81,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle Navigation"
-              className="p-2 rounded-lg border border-gold/30 text-cream hover:text-gold transition-colors"
+              className="p-2 rounded-lg border border-gold/30 text-cream hover:text-gold hover:border-gold transition-colors"
             >
               {isOpen ? (
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -95,7 +98,7 @@ export default function Navbar() {
 
         {/* Mobile Dropdown */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-gold/15 flex flex-col gap-3 font-sans text-xs uppercase tracking-[0.2em]">
+          <div className="md:hidden py-4 border-t border-gold/15 flex flex-col gap-3 font-sans text-xs uppercase tracking-[0.2em] bg-[#130A06]">
             <Link
               href="/"
               onClick={() => setIsOpen(false)}
@@ -120,10 +123,15 @@ export default function Navbar() {
             <Link
               href="/founder"
               onClick={() => setIsOpen(false)}
-              className={`px-3 py-2 font-semibold transition-colors ${isFounder ? "text-gold" : "text-gold-light"}`}
+              className={`px-3 py-2 transition-colors ${isFounder ? "text-gold font-semibold" : "text-gold-light"}`}
             >
               Meet the Founder
             </Link>
+            <div className="px-3 pt-2">
+              <span className="inline-block px-3 py-1 rounded-full border border-gold/40 text-[10px] text-gold-light">
+                Launch: October 2026
+              </span>
+            </div>
           </div>
         )}
       </div>

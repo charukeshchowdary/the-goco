@@ -84,7 +84,7 @@ export default function FounderPage() {
                 </div>
 
                 <p className="text-xs uppercase tracking-[0.25em] text-gold/80 font-sans mt-6">
-                  October 2030
+                  October 2026
                 </p>
                 <p className="text-xs text-cream/50 font-sans mt-0.5">
                   Andhra Pradesh, India
@@ -224,7 +224,7 @@ export default function FounderPage() {
             </h2>
             <div className="gold-divider mt-4 mb-4" />
             <p className="text-cream/70 text-sm md:text-base font-sans max-w-lg mx-auto">
-              Follow the journey, share ideas, or reach out directly for collaborations as we build toward our October 2030 debut.
+              Follow the journey, share ideas, or reach out directly for collaborations as we build toward our October 2026 debut.
             </p>
           </div>
 
@@ -310,7 +310,7 @@ export default function FounderPage() {
             The Journey Unfolds
           </p>
           <h2 className="text-2xl sm:text-3xl font-bold text-cream mb-2">
-            Coming Soon to Market — <span className="text-gold-gradient">October 2030</span>
+            Coming Soon to Market — <span className="text-gold-gradient">October 2026</span>
           </h2>
           <p className="text-cream/60 text-sm font-sans mb-8">
             THE GOCO — Where Chocolate Tells a Story.
@@ -353,7 +353,7 @@ export default function FounderPage() {
             <Link href="/products" className="hover:text-gold transition-colors">Products & Craft</Link>
             <Link href="/founder" className="text-gold font-semibold">Meet the Founder</Link>
           </div>
-          <p>© 2030 THE GOCO. Founded by The Charukesh Chowdary Maddukuri.</p>
+          <p>© 2026 THE GOCO. Founded by The Charukesh Chowdary Maddukuri.</p>
         </div>
       </footer>
     </div>

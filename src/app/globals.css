@@ -1,25 +1,36 @@
 @import "tailwindcss";
 
-/* ===== THE GOCO — Luxury Artisan Design System ===== */
+/* ===== THE GOCO — Ultra-Luxury Artisan Design System (Figma Spec) ===== */
 
 :root {
-  /* Core brand palette — extracted from brand identity & imagery */
-  --cream:        #FAF5EE;
-  --cream-dark:   #F0E8D8;
-  --cream-soft:   #FFFDF9;
-  --brown-dark:   #2C1810;
-  --brown:        #4A2C1A;
-  --brown-medium: #6B3A2A;
-  --brown-light:  #8B5E3C;
-  --gold:         #C5A55A;
-  --gold-light:   #E8D5A8;
-  --gold-dark:    #A8893D;
-  --teal:         #1A6B5C;
-  --teal-light:   #2A8B76;
-  --teal-dark:    #0E4D42;
+  /* Core brand palette — extracted directly from Figma design */
+  --bg-primary:    #120905;
+  --bg-secondary:  #180D09;
+  --bg-tertiary:   #22120C;
+  --bg-card:       #1E100A;
+  --bg-card-light: #2A170F;
 
-  --background: var(--cream);
-  --foreground: var(--brown-dark);
+  --cream:         #FAF5EE;
+  --cream-dark:    #E8DCB8;
+  --cream-soft:    #FFFDF9;
+
+  --brown-dark:    #180D09;
+  --brown:         #24130C;
+  --brown-medium:  #3E2216;
+  --brown-light:   #5C3624;
+
+  --gold:          #C5A55A;
+  --gold-light:    #E8D5A8;
+  --gold-dark:     #A8893D;
+  --gold-accent:   #D4AF37;
+  --gold-ticker:   #C59E47;
+
+  --teal:          #1A6B5C;
+  --teal-light:    #2A8B76;
+  --teal-dark:     #0E4D42;
+
+  --background:    var(--bg-primary);
+  --foreground:    var(--cream);
 }
 
 @theme inline {
@@ -35,6 +46,8 @@
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-gold-dark: var(--gold-dark);
+  --color-gold-accent: var(--gold-accent);
+  --color-gold-ticker: var(--gold-ticker);
   --color-teal: var(--teal);
   --color-teal-light: var(--teal-light);
   --color-teal-dark: var(--teal-dark);
@@ -51,14 +64,16 @@
 html {
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
+  background-color: #120905;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: #120905;
+  color: #FAF5EE;
   font-family: var(--font-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* ===== Accessible Focus States ===== */
@@ -70,28 +85,28 @@ body {
 
 /* ===== Custom Luxury Scrollbar ===== */
 ::-webkit-scrollbar {
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--cream-dark);
+  background: #120905;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--brown-light);
+  background: #3E2216;
   border-radius: 6px;
-  border: 2px solid var(--cream-dark);
+  border: 2px solid #120905;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--brown);
+  background: #C5A55A;
 }
 
 /* ===== Selection ===== */
 ::selection {
-  background: var(--gold-light);
-  color: var(--brown-dark);
+  background: rgba(197, 165, 90, 0.4);
+  color: #FAF5EE;
 }
 
 /* ===== Luxury Styling Utilities ===== */
@@ -110,27 +125,27 @@ body {
 
 /* Modern Luxury Glass Panel (Dark) */
 .glass-panel-dark {
-  background: rgba(44, 24, 16, 0.65);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(197, 165, 90, 0.25);
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.45);
+  background: rgba(26, 14, 9, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 165, 90, 0.22);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.55);
 }
 
-/* Modern Luxury Glass Card (Light) */
-.glass-card-light {
-  background: rgba(250, 245, 238, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+/* Modern Luxury Glass Card */
+.glass-card-luxury {
+  background: rgba(30, 16, 10, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(197, 165, 90, 0.2);
-  box-shadow: 0 14px 34px -10px rgba(44, 24, 16, 0.1);
+  box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.4);
 }
 
 /* Decorative Gold Divider */
 .gold-divider {
-  width: 100px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  width: 90px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(197, 165, 90, 0.8), transparent);
   margin: 0 auto;
   position: relative;
 }
@@ -142,8 +157,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--gold);
-  font-size: 10px;
-  background: var(--background);
+  font-size: 8px;
+  background: #120905;
   padding: 0 6px;
 }
 
@@ -151,7 +166,7 @@ body {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -175,15 +190,6 @@ body {
   }
 }
 
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(197, 165, 90, 0.25);
-  }
-  50% {
-    box-shadow: 0 0 32px rgba(197, 165, 90, 0.55);
-  }
-}
-
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -192,8 +198,8 @@ body {
 @keyframes storyTextEnter {
   from {
     opacity: 0;
-    transform: translateY(18px);
-    filter: blur(6px);
+    transform: translateY(14px);
+    filter: blur(4px);
   }
   to {
     opacity: 1;
@@ -202,25 +208,20 @@ body {
   }
 }
 
-@keyframes shimmerSweep {
-  0%   { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.9s ease-out both;
+  animation: fadeIn 0.8s ease-out both;
 }
 
 .animate-slide-down {
-  animation: slideDown 0.5s ease-out both;
+  animation: slideDown 0.4s ease-out both;
 }
 
 .story-text-enter {
-  animation: storyTextEnter 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: storyTextEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* Luxury Shimmer Button */
@@ -233,17 +234,6 @@ body {
 .gold-shimmer-btn:hover {
   background-position: right center;
   box-shadow: 0 0 25px rgba(197, 165, 90, 0.45);
-}
-
-/* Luxury Card Hover */
-.luxury-card-hover {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.luxury-card-hover:hover {
-  transform: translateY(-4px);
-  border-color: rgba(197, 165, 90, 0.6);
-  box-shadow: 0 20px 40px -15px rgba(44, 24, 16, 0.3), 0 0 25px rgba(197, 165, 90, 0.15);
 }
 
 /* Hide scrollbars cleanly while preserving scrollability */

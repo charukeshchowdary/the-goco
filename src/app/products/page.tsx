@@ -119,7 +119,7 @@ export default function ProductsPage() {
         </Link>
 
         <span className="text-gold/80 text-xs uppercase tracking-[0.25em] font-sans">
-          Market Launch: October 2030
+          Market Launch: October 2026
         </span>
       </div>
 
@@ -269,7 +269,7 @@ export default function ProductsPage() {
           {/* Section Header */}
           <div className="text-center mb-10">
             <span className="text-gold uppercase tracking-[0.3em] text-xs font-sans font-semibold mb-2 block">
-              ✦ Coming Soon — October 2030 ✦
+              ✦ Coming Soon — October 2026 ✦
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-serif">
               Our Signature <span className="text-gold-gradient">Collections</span>
@@ -461,7 +461,7 @@ export default function ProductsPage() {
                 <div className="p-3 rounded-xl bg-brown/50 border border-gold/20 flex items-center justify-between text-xs">
                   <span className="text-gold">Market Availability</span>
                   <span className="px-2.5 py-1 rounded-full bg-teal-dark text-gold-light font-semibold uppercase tracking-wider text-[10px]">
-                    Coming Soon — Oct 2030
+                    Coming Soon — Oct 2026
                   </span>
                 </div>
               </div>
@@ -477,7 +477,7 @@ export default function ProductsPage() {
             Reserve Your Taste
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cream mb-2 font-serif">
-            Coming to Market — <span className="text-gold-gradient">October 2030</span>
+            Coming to Market — <span className="text-gold-gradient">October 2026</span>
           </h2>
           <p className="text-cream/60 text-sm font-sans mb-8">
             THE GOCO — Where Chocolate Tells a Story.
@@ -500,7 +500,7 @@ export default function ProductsPage() {
             <Link href="/products" className="text-gold font-semibold">Products & Process</Link>
             <Link href="/founder" className="hover:text-gold transition-colors">Meet the Founder</Link>
           </div>
-          <p>© 2030 THE GOCO. All rights reserved.</p>
+          <p>© 2026 THE GOCO. All rights reserved.</p>
         </div>
       </footer>
     </div>
